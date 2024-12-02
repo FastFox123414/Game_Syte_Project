@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <title>Новости</title>
+    <title>Главная</title>
     <style>
       a {
         text-decoration: none; /* Убираем подчёркивание */
@@ -13,6 +13,10 @@
       }
       a:hover {
         filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+      }
+      button:hover{
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+        transform: scale(1.2)
       }
     </style>
   </head>
@@ -25,6 +29,7 @@
         background: rgba(74.37, 74.07, 74.07, 0.94);
       "
     >
+      
       <div
         style="
           width: 1920px;
@@ -164,7 +169,7 @@
           style="
             width: 288px;
             height: 181px;
-            left: 286px;
+            left: 0px;
             top: 2px;
             position: absolute;
             opacity: 0.5;
@@ -280,7 +285,13 @@
           display: inline-flex;
         "
       >
-        <div style="width: 1346px; height: 897px; background: white"></div>
+        <div style="width: 1346px; height: 897px; background: white">
+          <form action="/login">
+            <button style="width: 333px; height: 152px; left: 507px; top: 158px; position: absolute; background: #760074; font-size:100px ;border-width: 0;" >Войти</button>
+          </form>
+          <button style="width: 333px; height: 152px; left: 507px; top: 397px; position: absolute; background: #760074; font-size:30px;border-width: 0;">Зарегистрироваться</button>
+
+        </div>
       </div>
       <img
         style="
@@ -303,6 +314,12 @@
         "
         src="{% static 'main1/imags/side.png' %}"
       />
+
+      
+
+
     </div>
+
+   
   </body>
 </html>

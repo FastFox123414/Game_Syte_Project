@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <title>Новости</title>
+    <link rel="stylesheet" href="{% static 'main1/cssfiles/textline.css' %}">
+
+    <title>Войти</title>
     <style>
       a {
         text-decoration: none; /* Убираем подчёркивание */
@@ -13,6 +15,10 @@
       }
       a:hover {
         filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+      }
+      button:hover{
+        filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.7));
+        transform: scale(1.2)
       }
     </style>
   </head>
@@ -25,6 +31,7 @@
         background: rgba(74.37, 74.07, 74.07, 0.94);
       "
     >
+      
       <div
         style="
           width: 1920px;
@@ -160,17 +167,7 @@
             background: #760074;
           "
         ></div>
-        <div
-          style="
-            width: 288px;
-            height: 181px;
-            left: 286px;
-            top: 2px;
-            position: absolute;
-            opacity: 0.5;
-            background: linear-gradient(180deg, #760074 31%, #7200ec 100%);
-          "
-        ></div>
+        
 
         <div
           style="
@@ -280,7 +277,31 @@
           display: inline-flex;
         "
       >
-        <div style="width: 1346px; height: 897px; background: white"></div>
+        <div style="width: 1346px; height: 897px; background: white">
+            <div class="wrapper">
+                <form action="">
+                  <h1  style= "left: 590px; top: 100px; position: absolute;" >Войти</h1>
+                  
+                  <div class="input-box">
+                    <input style= "left: 550px; top: 170px; position: absolute;" type="text" placeholder="Логин" required />
+                    <i class="bx bx-user"></i>
+                  </div>
+                  <div class="input-box">
+                    <input type="password" style= "left: 550px; top: 200px; position: absolute;" placeholder="Пароль" required />
+                    <i class="bx bxs-lock-alt"></i>
+                  </div>
+                  <div class="remember">
+                    <label style= "left: 520px; top: 260px; position: absolute;" for=""> <input class="flowtext" type="checkbox" />Запомнить меня</label>
+                    <a class="flowtext" style= "left: 660px; top: 261px; position: absolute;" href="#">Забыли пароль?</a>
+                  </div>
+                  <button class="flowtext" type="submit" class="btn" style= " weight=120%;height=120%;left: 605px; top: 230px; position: absolute;border-width: 0;font-size: 20px">Войти</button>
+                  <div class="register-link">
+                    <div style= "left: 520px; top: 270px; position: absolute;"><p>Еще нет аккаунта? <a class="flowtext" href="#">Зарегистрироваться</a></p></div>
+                  </div>
+                </form>
+              </div>
+
+        </div>
       </div>
       <img
         style="
@@ -303,6 +324,13 @@
         "
         src="{% static 'main1/imags/side.png' %}"
       />
+
+      
+
+
     </div>
+
+   
   </body>
 </html>
+
