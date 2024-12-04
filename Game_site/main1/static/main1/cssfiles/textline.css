@@ -14,7 +14,7 @@
     to {background-position: 200% center}
 }
 
-input{
+.inlog{
     background-clip: padding-box;
     border: 2px solid #af1cb4;
     border-radius: 0.25rem;
@@ -22,4 +22,19 @@ input{
     
 }
 
+input.newflowbutton:hover{
+    
+    background: linear-gradient(90deg,  #7200EC, #a027d8, #e933ff, #a027d8,#7200EC );
+    background-size: 200% auto;
+    background-clip:text;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: buttonflow 5s linear infinite;
+}
+
+@keyframes buttonflow {
+    from {background-position: 0% center}         
+    to {background-position: 200% center}
+}
 

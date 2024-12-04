@@ -10,4 +10,6 @@ urlpatterns = [
     path('Reviews/', views.Reviews ),
     path('Ratings/', views.Ratings ),
     path('login/', views.Login ),
+    path('registr/', views.Registr ),
+    
 ]
