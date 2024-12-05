@@ -11,5 +11,6 @@ urlpatterns = [
     path('Ratings/', views.Ratings ),
     path('login/', views.Login ),
     path('registr/', views.Registr ),
+    path('Password_Rec/', views.Password_Rec ),
     
 ]

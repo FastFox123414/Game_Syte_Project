@@ -14,3 +14,5 @@ def Login(request):
     return render(request, 'main1/login.html')
 def Registr(request):  
     return render(request, 'main1/registr.html')
+def Password_Rec(request):  
+    return render(request, 'main1/Password_Rec.html')
