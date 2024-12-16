@@ -1,5 +1,6 @@
 
 
+
 .flowtext{
     background: linear-gradient(90deg,  #7200EC, #a027d8, #e933ff, #a027d8,#7200EC );
     background-size: 200% auto;
@@ -37,7 +38,6 @@ input.newflowbutton:hover{
     from {background-position: 0% center}         
     to {background-position: 200% center}
 }
-
 
 
 
