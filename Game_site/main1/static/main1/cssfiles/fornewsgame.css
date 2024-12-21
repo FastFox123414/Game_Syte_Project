@@ -1,0 +1,48 @@
+.game1{
+    height: 33.33333%;
+    width: 100%;
+    position: absolute;
+}
+.game2{
+    height: 33.33333%;
+    top:33.33333%;
+    width: 100%;
+    position: absolute;
+}
+.game3{
+    top:66.66666%;
+    height: 33.33333%;
+    width: 100%;
+    position: absolute;
+
+}
+.osnnew{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.osn1{
+    font-size: 150%;
+}
+.osn2{
+    font-size: 150%;
+}
+.osn3{
+    font-size: 150%;
+}
+.date1{
+    position: absolute;
+    top:50%;
+    font-size: 120%;
+}
+.date2{
+    position: absolute;
+    top:50%;
+    font-size: 120%;
+}
+.date3{
+    position: absolute;
+    top:50%;
+    font-size: 120%;
+
+}

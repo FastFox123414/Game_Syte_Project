@@ -154,7 +154,7 @@
         >
           <a  style="height: 100%;width: 100%;color:white;"  href="/Ratings/">Рейтинги</a>
         </div>
-        <form action="/kudato"> 
+        <form action="/Private_account"> 
           <button>
             <img
               style="
@@ -184,7 +184,20 @@
           display: inline-flex;
         "
       >
-        <div style="width: 100%; height: 100%; background: white">s</div>
+        <div style="width: 100%; height: 100%; background: white">
+          {%for i in Rev%}
+          <video style="left:57%;position:absolute;top:6%;width:39%" src={{i.link}} controls>
+
+          </video>
+          
+
+          <img class="fotr" style="position:absolute;top:15%;left:10%;" src="{%static "main1/imags/{{i.foto.url}}"%}" />
+
+          <p class="osn" style="top:40%;position:absolute;left:6%;font-size:160%;" >{{i.full_text}}</p>
+
+          {%endfor%}
+          </video>
+        </div>
       </div>
       <img
         style="

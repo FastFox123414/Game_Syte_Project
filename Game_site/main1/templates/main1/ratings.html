@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="{% static 'main1/cssfiles/textline.css' %}">
+    <link rel="stylesheet" href="{% static 'main1/cssfiles/fornewsgame.css' %}">
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
     <title>Рейтинги</title>
@@ -156,18 +157,23 @@
         >
           <a  style="height: 100%;width: 100%;color:white;"  href="/Ratings/">Рейтинги</a>
         </div>
-        <img
-          style="
-            weight:80%;
-            height:80%;
-            left:88%;
-            top:9%;
-            cursor: pointer;
-            position: absolute;
-            color: white;
-          "
-          src="{% static 'main1/imags/person.png' %}"
-        />
+        <form action="/Private_account"> 
+          <button>
+            <img
+              style="
+                weight:80%;
+                height:80%;
+                left:88%;
+                top:9%;
+                cursor: pointer;
+                position: absolute;
+                color: white;
+              "
+        
+              src="{% static 'main1/imags/person.png' %}"
+            >
+          </button>
+        </form>
       </div>
       <div
         style="
@@ -181,7 +187,37 @@
           display: inline-flex;
         "
       >
-        <div style="width: 100%; height: 100%; background: white"></div>
+        <div style="width: 100%; height: 100%; background: white">
+          <div class="osnnew">
+            {%for i1 in Rating1 %}
+            <div class="game1">
+              <h1 class="naznew1" >{{i1.title}}</h1>
+              <img class="fotr1" style="left:61%;position:absolute;" src="{%static "main1/imags/{{i1.foto.url}}"%}" />
+              <p class="osn1"   >{{i1.full_text}}</p>
+              <p class="date1" >{{i1.rating}}</p>
+
+            </div>
+            {%endfor%}
+            {%for i2 in Rating2 %}
+            <div class="game2">
+              <h1 class="naznew2" >{{i2.title}}</h1>
+              <img class="fotr2" style="left:61%;position:absolute;" src="{%static "main1/imags/{{i2.foto.url}}"%}" />
+              <p class="osn2"   >{{i2.full_text}}</p>
+              <p class="date2" >{{i2.rating}}</p>
+
+            </div>
+            {%endfor%}
+            {%for i3 in Rating3 %}
+            <div class="game3">
+              <h1 class="naznew3" >{{i3.title}}</h1>
+              <img class="fotr3" style="left:61%;position:absolute;" src="{%static "main1/imags/{{i3.foto.url}}"%}" />
+              <p class="osn3"   >{{i3.full_text}}</p>
+              <p class="date3" >{{i3.rating}}</p>
+
+            </div>
+            {%endfor%}
+          </div>
+        </div>
       </div>
       <img
         style="

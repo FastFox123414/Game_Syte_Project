@@ -7,10 +7,11 @@ urlpatterns = [
     path('', views.home ),
     path('News/', views.News ),
     path('News_Game/', views.News_Game ),
-    path('Reviews/', views.Reviews ),
-    path('Ratings/', views.Ratings ),
+    path('Reviews/', views.Review ),
+    path('Ratings/', views.Rating ),
     path('login/', views.Login ),
     path('registr/', views.Registr ),
     path('Password_Rec/', views.Password_Rec ),
+    path('Private_account/', views.Private_account ),
     
 ]
