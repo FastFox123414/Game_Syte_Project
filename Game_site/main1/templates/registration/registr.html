@@ -206,34 +206,13 @@
                     </div>
                 </div>
             </div>
-            <form style="top:100px;position:absolute;left:37%;" action="" method="post">
-                   
-                <!-- поле ввода электронной почты -->
-                <div class="form-group">
-                    <label>Логин</label>
-                    <input style="outline:none;" type="text" name="name" class="form-control" required />
-                </div>
-
-                <div class="form-group">
-                  <label>Электронная почта</label>
-                  <input style="outline:none;" type="email" name="email" class="form-control" required />
-                </div>    
-                <!-- поле ввода пароля -->
-                <div class="form-group">
-                    <label>Пароль</label>
-                    <input style="outline:none;" type="password" name="password" class="form-control" required>
-                </div>
-                <!-- поле повторного ввода пароля -->
-                <div class="form-group">
-                    <label>Повторите пароль</label>
-                    <input style="outline:none;" type="password" name="confirm_password" class="form-control" required>
-                </div>
-                <!-- кнопка отправки данных на сервер -->
-                <div class="form-group">
-                    <input style="border-width: 0;" class="flowtext" type="submit" name="submit" class="btn btn-primary" value="Зарегистрироваться">
-                </div>
+            <form style="top:100px;position:absolute;left:37%;" method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <button type="submit">Зарегистрироваться</button>
+                
                 <!-- вход для тех, у кого уже есть аккаунт -->
-                <p>Уже зарегистрированы? <a class="flowtext" href="/login">Войдите в систему</a>.</p>
+              <p>Уже зарегистрированы? <a class="flowtext" href="/login">Войдите в систему</a>.</p>
             </form>
         </div>
       </div>

@@ -207,7 +207,7 @@
                     <section style="position: absolute;left: 38%;top: 10%;" class="user-profile">
                         <h2>Профиль пользователя</h2>
                         <div class="profile-info">
-                            <p>Имя пользователя: <span id="user-name"></span></p>
+                            <p>Имя пользователя: <span id="user-name">{{user.username}}</span></p>
                             <p>Привязанная почта: <span id="email"></span></p>
                             <p>Дата регистрации: <span id="registration-date"></span></p>
                             
@@ -225,7 +225,7 @@
                               <input type="checkbox" id="delete-confirmation" name="delete-confirmation" required>
                             </div>
                             <div>
-                                <button class="flowtext" style=" cursor: pointer;border-width: 0;left:-1.8%;position:absolute;" type="submit">Удалить данные</button>
+                                <button class="flowtext" style=" cursor: pointer;border-width: 0;left:-1.8%;position:absolute;" onclick="location.href='{%url 'logout' %}?next=/main1/login'" >Удалить данные</button>
                             </div>
                         </form>
                     </section>

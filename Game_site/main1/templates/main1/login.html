@@ -207,10 +207,11 @@
             <p>Введите свой логин и пароль.</p>
             <!-- метод, которым будем работать с формой — отправлять на сервер -->
             <form action="" method="post">
+              {% csrf_token %}
               <!-- поле ввода электронной почты -->
               <div class="form-group">
                 <label>Логин</label>
-                <input type="text" name="name" class="form-control" required />
+                <input type="text" name="username" class="form-control" required />
               </div>
               <!-- поле ввода пароля -->
               <div class="form-group">

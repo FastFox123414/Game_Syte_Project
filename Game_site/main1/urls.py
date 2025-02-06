@@ -10,8 +10,8 @@ urlpatterns = [
     path('Reviews/', views.Review ),
     path('Ratings/', views.Rating ),
     path('login/', views.Login ),
-    path('registr/', views.Registr ),
+    path('registr/', views.Registr , name="registr" ),
     path('Password_Rec/', views.Password_Rec ),
-    path('Private_account/', views.Private_account ),
+    path('Private_account/', views.Private_account_view ,name="Private_account"),
     
 ]

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, intial-scale=1.0" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <meta http-equiv="X-UA-Compatible" content="IE-edge" />
-    <title>Регистрация</title>
+    <title>Вход</title>
     <style>
       a {
         text-decoration: none; /* Убираем подчёркивание */
@@ -19,13 +19,14 @@
       }
       input.flowtext:hover{
         filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+        
       }
       
       .form-control:focus {
         border-color: #330080;
         outline: 0;
-        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 4px rgba(51, 0, 128,.6);
-        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 4px rgba(51, 0, 128,.6);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 4px rgba(51, 0, 128, 0.6);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 4px rgba(51, 0, 128, 0.6);
     }
     </style>
   </head>
@@ -129,7 +130,7 @@
             word-wrap: break-word;
           "
         >
-          <a  style="text-decoration: none;text-decoration: none;color:white;"  href="/News_Game/">Новинки</a>
+          <a style="text-decoration: none;height: 100%;width: 100%;color:white;"  href="/News_Game/">Новинки</a>
         </div>
         <div
           style="
@@ -196,45 +197,54 @@
         "
       >
         <div style="width: 100%; height: 100%; background: white">
-            <div class="container">
-                <div class="row">
-                    <!-- делаем самую простую вёрстку -->
-                    <div style="left:39%;" class="col-md-12">
-                        <h2 >Регистрация</h2>
-                        <p style="position:absolute;left:-6%">Заполните все поля, чтобы создать новый аккаунт.</p>
-                        
-                    </div>
-                </div>
-            </div>
-            <form style="top:100px;position:absolute;left:37%;" action="" method="post">
-                   
-                <!-- поле ввода электронной почты -->
-                <div class="form-group">
-                    <label>Логин</label>
-                    <input style="outline:none;" type="text" name="name" class="form-control" required />
-                </div>
-
-                <div class="form-group">
-                  <label>Электронная почта</label>
-                  <input style="outline:none;" type="email" name="email" class="form-control" required />
-                </div>    
-                <!-- поле ввода пароля -->
-                <div class="form-group">
-                    <label>Пароль</label>
-                    <input style="outline:none;" type="password" name="password" class="form-control" required>
-                </div>
-                <!-- поле повторного ввода пароля -->
-                <div class="form-group">
-                    <label>Повторите пароль</label>
-                    <input style="outline:none;" type="password" name="confirm_password" class="form-control" required>
-                </div>
-                <!-- кнопка отправки данных на сервер -->
-                <div class="form-group">
-                    <input style="border-width: 0;" class="flowtext" type="submit" name="submit" class="btn btn-primary" value="Зарегистрироваться">
-                </div>
-                <!-- вход для тех, у кого уже есть аккаунт -->
-                <p>Уже зарегистрированы? <a class="flowtext" href="/login">Войдите в систему</a>.</p>
+            <!-- создаём контейнер -->
+    <div class="container">
+        <div class="row">
+          <!-- указываем стиль адаптивной вёрстки -->
+          <div class="col-md-12">
+            <!-- пишем заголовок и пояснительный текст -->
+            <h2>Вход</h2>
+            <p>Введите свой логин и пароль.</p>
+            <!-- метод, которым будем работать с формой — отправлять на сервер -->
+            <form action="" method="post">
+              {% csrf_token %}
+              <!-- поле ввода электронной почты -->
+              <div class="form-group">
+                <label>Логин</label>
+                <input type="text" name="username" class="form-control" required />
+              </div>
+              <!-- поле ввода пароля -->
+              <div class="form-group">
+                <label>Пароль</label>
+                <input
+                  type="password"
+                  name="password"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <div class="remember">
+                <label for=""> <input type="checkbox" />Запомнить меня.</label>
+                <a class="flowtext" href="/Password_Rec">Забыли пароль?</a>
+              </div>
+              <!-- кнопка отправки данных на сервер -->
+              <div class="form-group">
+                <input
+                  style="background:#330080;border:0;"
+                  type="submit"
+                  name="submit"
+                  class="btn btn-primary"
+                  value="Войти"
+                />
+              </div>
+              <!-- ссылка для тех, у кого ещё нет аккаунта -->
+              <p>
+                Нет аккаунта? <a class="flowtext" href="/registration/registr">Создайте его за минуту</a>.
+              </p>
             </form>
+          </div>
+        </div>
+      </div>
         </div>
       </div>
       <img

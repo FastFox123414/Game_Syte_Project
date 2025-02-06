@@ -1,9 +1,17 @@
-from django.shortcuts import render
+from django.urls import reverse_lazy
+from django.views.generic.edit import CreateView
+from django.shortcuts import render , redirect
 from .models import New
 from .models import New_Game
 from .models import Reviews
 from .models import Ratings
-
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from .forms import UserRegistrationForm
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm
+from .forms import *
+from django.views.generic import DetailView
 def home(request):
     return render(request,"main1/home.html")
 def News(request):  
@@ -31,3 +39,18 @@ def Password_Rec(request):
 def Private_account(request):  
     return render(request, 'main1/private_account.html')
 
+@login_required
+def Private_account_view(request):
+    return render(request, "main1/private_account.html")
+
+class RegisterUser(DetailView ,CreateView):
+    form_class = UserCreationForm
+    template_name = "main1/registration/registr.html"
+    success_url = reverse_lazy("login")
+    
+    def get_context_data(self, *, object_list=None , **kwargs):
+        context = super().get_context_data(**kwargs)
+        c_def = self.get_user_context(title="Регистрация")
+        return dict(list(context.items()) + list(c_def.items()) )
+    
+    
